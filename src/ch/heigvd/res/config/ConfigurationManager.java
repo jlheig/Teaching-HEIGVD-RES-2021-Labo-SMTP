@@ -19,12 +19,21 @@ public class ConfigurationManager implements IConfigurationManager {
     private int numberOfGroups;
     private ArrayList<Person> witnessesToCC;
 
+    /**
+     *
+     * @throws IOException
+     */
     public ConfigurationManager() throws IOException{
         victims = loadAddressesFromFile("./settings/victims.utf8");
         messages = loadMessagesFromFile("./settings/messages.utf8");
         loadProperties("./settings/config.properties");
     }
 
+    /**
+     *
+     * @param filename, the filename of the file in which we will find the properties we need
+     * @throws IOException
+     */
     private void loadProperties(String filename) throws IOException {
         FileInputStream fis = new FileInputStream(filename);
         Properties properties = new Properties();
@@ -41,6 +50,12 @@ public class ConfigurationManager implements IConfigurationManager {
         }
     }
 
+    /**
+     *
+     * @param filename, the filename of the file in which we want to get the email addresses
+     * @return, a list of Person generated from the email addresses in the file
+     * @throws IOException
+     */
     private ArrayList<Person> loadAddressesFromFile(String filename) throws IOException {
         ArrayList<Person> result;
         try(FileInputStream fis = new FileInputStream(filename)){
@@ -57,6 +72,12 @@ public class ConfigurationManager implements IConfigurationManager {
         return result;
     }
 
+    /**
+     *
+     * @param filename, filename of the file in which we can find the messages we will use to generate pranks
+     * @return
+     * @throws IOException
+     */
     private ArrayList<String> loadMessagesFromFile(String filename) throws IOException {
         ArrayList<String> result;
         try(FileInputStream fis = new FileInputStream(filename)){

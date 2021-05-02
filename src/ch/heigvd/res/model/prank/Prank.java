@@ -46,6 +46,10 @@ public class Prank {
         return new ArrayList<>(witnessRecipients);
     }
 
+    /**
+     *
+     * @return, the message generated from the prank
+     */
     public Message generateMailMessage(){
         Message msg = new Message();
 

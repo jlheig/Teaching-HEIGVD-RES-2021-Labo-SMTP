@@ -23,11 +23,21 @@ public class SmtpClient implements ISmtpClient{
     private PrintWriter writer;
     private BufferedReader reader;
 
+    /**
+     *
+     * @param smtpServerAddress, address of the SMTP server
+     * @param port, port of  the SMTP server
+     */
     public SmtpClient(String smtpServerAddress, int port){
         this.smtpServerAddress = smtpServerAddress;
         this.smtpServerPort = port;
     }
 
+    /**
+     *
+     * @param message, the message we want to send
+     * @throws IOException
+     */
     @Override
     public void sendMessage(Message message) throws IOException{
         LOG.info("Sending message via SMTP");

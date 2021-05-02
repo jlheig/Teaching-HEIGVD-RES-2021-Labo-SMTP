@@ -11,6 +11,12 @@ public class Person {
 
     private final String address;
 
+    /**
+     *
+     * @param firstName, the firstname of the person
+     * @param lastName, the lastname of the person
+     * @param address, the address of the person
+     */
     public Person(String firstName, String lastName, String address){
         this.firstName = firstName;
         this.lastName = lastName;

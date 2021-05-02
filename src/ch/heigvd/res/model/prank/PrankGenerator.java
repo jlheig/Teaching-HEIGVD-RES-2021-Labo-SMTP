@@ -15,14 +15,23 @@ public class PrankGenerator {
     private static final Logger LOG = Logger.getLogger(PrankGenerator.class.getName());
     private IConfigurationManager configurationManager;
 
+    /**
+     *
+     * @param configurationManager, the configuration manager we will use to get all the necessary info
+     */
     public PrankGenerator(IConfigurationManager configurationManager){
         this.configurationManager = configurationManager;
     }
 
+    /**
+     *
+     * @return, list of the pranks we generated
+     */
     public List<Prank> generatePranks(){
         List<Prank> pranks = new ArrayList<>();
         int min_victimsPerGroup = 3;
         List<String> messages = configurationManager.getMessages();
+        Collections.shuffle(messages);
         int messageIndex = 0;
 
         int numberOfGroups = configurationManager.getNumberOfGroups();
@@ -54,7 +63,12 @@ public class PrankGenerator {
         return pranks;
     }
 
-
+    /**
+     *
+     * @param victims, list of the victims of the prank
+     * @param numberOfGroups, the number of groups we want to generate
+     * @return, the groups we generated
+     */
     public List<Group> generateGroups(List<Person> victims, int numberOfGroups){
         List<Person> availableVictims = new ArrayList<>(victims);
         Collections.shuffle(availableVictims);

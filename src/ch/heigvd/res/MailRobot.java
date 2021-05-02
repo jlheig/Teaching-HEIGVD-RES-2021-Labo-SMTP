@@ -15,13 +15,16 @@ public class MailRobot {
         try{
             IConfigurationManager configurationManager = new ConfigurationManager();
 
+            //Getting the information to setup the smtp client
             String address = configurationManager.getSmtpServerAdress();
             int port = configurationManager.getSmtpServerPort();
             ISmtpClient smtpClient = new SmtpClient(address, port);
 
+            //Generating the prank messages
             PrankGenerator pg = new PrankGenerator(configurationManager);
-
             List<Prank> pranks = pg.generatePranks();
+
+            //sending the prank messages
             for(Prank prank : pranks) {
                 smtpClient.sendMessage(prank.generateMailMessage());
             }
