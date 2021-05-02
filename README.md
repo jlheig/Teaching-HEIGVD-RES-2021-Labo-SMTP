@@ -58,7 +58,7 @@ mvn package
 
 ## Class diagram
 
-![](\images\UML_Diagram.jpg)
+![](/images/UML_Diagram.JPG)
 
 * MailRobot is the main class of the application, it initializes the ConfigurationManager, the SmtpClient.
 * First we use the ConfigurationManager to get the informations from the config files.
@@ -116,14 +116,14 @@ INFO: 250 Ok
 
 Mail received on the MockMock web interface : 
 
-![](\images\MailReceived.jpg)
+![](/images/MailReceived.JPG)
 
 We can read the mail on the web interface : 
 
-![](\images\Mail1.jpg)
+![](/images/Mail1.JPG)
 
-![](\images\Mail2.jpg)
+![](/images/Mail2.JPG)
 
 We can also see on the MockMock terminal that the mail was well received : 
 
-![](\images\dockerTerminal.jpg)
+![](/images/dockerTerminal.jpg)
