@@ -58,7 +58,7 @@ mvn package
 
 ## Class diagram
 
-![](\images\UML Diagram.JPG)
+![](\images\UML_Diagram.JPG)
 
 * MailRobot is the main class of the application, it initializes the ConfigurationManager, the SmtpClient.
 * First we use the ConfigurationManager to get the informations from the config files.
