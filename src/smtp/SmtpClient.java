@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.logging.Logger;
 
 public class SmtpClient implements ISmtpClient{
@@ -86,6 +88,7 @@ public class SmtpClient implements ISmtpClient{
         line = reader.readLine();
         LOG.info(line);
         writer.write("Content-Type: text/plain; charset=\"utf-8\"\r\n");
+        writer.write("Content-Transer-Encoding: base64\r\n");
         writer.write("From: " + message.getFrom() + "\r\n");
 
         writer.write("To " + message.getTo()[0]);
@@ -95,6 +98,17 @@ public class SmtpClient implements ISmtpClient{
         writer.write("\r\n");
 
         writer.flush();
+
+
+
+        String subject_base64 = Base64.getEncoder().encodeToString(message.getSubject().getBytes(StandardCharsets.UTF_8));
+        String subject_send = "=?UTF-8?B?" + subject_base64 + "?=\r\n";
+        writer.write("Subject: " + subject_send);
+        writer.flush();
+        writer.write("\r\n");
+        LOG.info("Subject: " + message.getSubject());
+
+
 
         LOG.info(message.getBody());
         writer.write(message.getBody());

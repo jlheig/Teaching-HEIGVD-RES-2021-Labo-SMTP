@@ -5,9 +5,14 @@ import model.prank.PrankGenerator;
 import smtp.ISmtpClient;
 import smtp.SmtpClient;
 
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class MailRobot {
+
+    public static Charset encoding = StandardCharsets.UTF_8;
+
     public static void main(String[] args) {
         try{
             IConfigurationManager configurationManager = new ConfigurationManager();

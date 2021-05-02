@@ -12,6 +12,6 @@ public class Group {
     }
 
     public List<Person> getMembers(){
-        return new ArrayList<>(members);
+        return members;
     }
 }

@@ -21,15 +21,15 @@ public class PrankGenerator {
 
     public List<Prank> generatePranks(){
         List<Prank> pranks = new ArrayList<>();
-
+        int min_victimsPerGroup = 3;
         List<String> messages = configurationManager.getMessages();
         int messageIndex = 0;
 
         int numberOfGroups = configurationManager.getNumberOfGroups();
         int numberOfVictims = configurationManager.getVictims().size();
 
-        if(numberOfVictims / numberOfGroups < 3){
-            numberOfGroups = numberOfVictims / 3;
+        if(numberOfVictims / numberOfGroups < min_victimsPerGroup){
+            numberOfGroups = numberOfVictims / min_victimsPerGroup;
             LOG.warning("There are not enough victims to generate the desired number of groups. We can only generate a max of " + numberOfGroups + " groups to have at least 3 victims per group");
         }
 
