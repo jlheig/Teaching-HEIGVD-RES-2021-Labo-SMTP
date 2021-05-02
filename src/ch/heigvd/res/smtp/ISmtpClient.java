@@ -1,6 +1,6 @@
-package smtp;
+package ch.heigvd.res.smtp;
 
-import model.mail.Message;
+import ch.heigvd.res.model.mail.Message;
 import java.io.IOException;
 
 

@@ -1,6 +1,6 @@
-package config;
+package ch.heigvd.res.config;
 
-import model.mail.Person;
+import ch.heigvd.res.model.mail.Person;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

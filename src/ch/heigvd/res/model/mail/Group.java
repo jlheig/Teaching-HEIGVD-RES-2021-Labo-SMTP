@@ -1,4 +1,4 @@
-package model.mail;
+package ch.heigvd.res.model.mail;
 
 import java.util.ArrayList;
 import java.util.List;

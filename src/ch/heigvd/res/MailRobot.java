@@ -1,17 +1,15 @@
-import config.ConfigurationManager;
-import config.IConfigurationManager;
-import model.prank.Prank;
-import model.prank.PrankGenerator;
-import smtp.ISmtpClient;
-import smtp.SmtpClient;
+package ch.heigvd.res;
 
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
+import ch.heigvd.res.config.ConfigurationManager;
+import ch.heigvd.res.config.IConfigurationManager;
+import ch.heigvd.res.model.prank.Prank;
+import ch.heigvd.res.model.prank.PrankGenerator;
+import ch.heigvd.res.smtp.ISmtpClient;
+import ch.heigvd.res.smtp.SmtpClient;
+
 import java.util.List;
 
 public class MailRobot {
-
-    public static Charset encoding = StandardCharsets.UTF_8;
 
     public static void main(String[] args) {
         try{

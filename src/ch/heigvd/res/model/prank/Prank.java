@@ -1,7 +1,7 @@
-package model.prank;
+package ch.heigvd.res.model.prank;
 
-import model.mail.Message;
-import model.mail.Person;
+import ch.heigvd.res.model.mail.Message;
+import ch.heigvd.res.model.mail.Person;
 
 import java.util.ArrayList;
 import java.util.List;

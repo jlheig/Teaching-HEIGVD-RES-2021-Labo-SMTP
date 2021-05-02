@@ -1,9 +1,9 @@
-package model.prank;
+package ch.heigvd.res.model.prank;
 
-import config.ConfigurationManager;
-import config.IConfigurationManager;
-import model.mail.Group;
-import model.mail.Person;
+import ch.heigvd.res.config.ConfigurationManager;
+import ch.heigvd.res.config.IConfigurationManager;
+import ch.heigvd.res.model.mail.Group;
+import ch.heigvd.res.model.mail.Person;
 
 import java.util.ArrayList;
 import java.util.Collections;
